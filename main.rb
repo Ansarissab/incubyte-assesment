@@ -1,3 +1,6 @@
 def StringCalculator(string_numbers)
-  string_numbers.gsub("\n", "").split(",").map(&:to_i).sum
+  delimiter = string_numbers.start_with?("//") ? string_numbers[2] : ","
+
+  numbers = string_numbers.split("//#{delimiter}\n").last
+  numbers = numbers.split(delimiter).map(&:to_i).sum
 end

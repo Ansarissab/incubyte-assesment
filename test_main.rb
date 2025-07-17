@@ -15,4 +15,18 @@ RSpec.describe 'StringCalculator' do
     end
   end
 
+  describe 'support different delimiters' do
+    it 'should return the sum of string numbers with semi-colon delimiter' do
+      expect(StringCalculator("//;\n1;2;3")).to eq(6)
+    end
+
+    it 'should return the sum of string numbers with comma delimiter' do
+      expect(StringCalculator("//,\n1,2,3")).to eq(6)
+    end
+
+    it 'should return the sum of string numbers with $ delimiter' do
+      expect(StringCalculator("//$\n1$2$3")).to eq(6)
+    end
+  end
+
 end
