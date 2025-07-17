@@ -29,4 +29,17 @@ RSpec.describe 'StringCalculator' do
     end
   end
 
+  describe 'exception on negative numbers' do
+    it 'should return negative numbers not allowed for single negative number' do
+      expect(StringCalculator("1,2,-3")).to eq("Negative numbers are not allowed: -3")
+    end
+
+    it 'should return negative numbers not allowed for single negative number' do
+      expect(StringCalculator("//;\n1;2;-3")).to eq("Negative numbers are not allowed: -3")
+    end
+
+    it 'should return negative numbers not allowed for multiple number' do
+      expect(StringCalculator("//,\n1,2,-3,-4")).to eq("Negative numbers are not allowed: -3, -4")
+    end
+  end
 end
