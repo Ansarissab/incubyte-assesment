@@ -1,4 +1,5 @@
 def StringCalculator(string_numbers)
+  return 0 if string_numbers.empty?
   delimiter = string_numbers.start_with?("//") ? string_numbers[2] : ","
 
   numbers = string_numbers.split("//#{delimiter}\n").last
