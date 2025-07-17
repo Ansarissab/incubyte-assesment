@@ -1,3 +1,3 @@
 def StringCalculator(string_numbers)
-  string_numbers.split(",").map(&:to_i).sum
+  string_numbers.gsub("\n", "").split(",").map(&:to_i).sum
 end
